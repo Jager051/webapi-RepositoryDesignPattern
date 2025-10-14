@@ -13,6 +13,7 @@ namespace WebAPI.API.Controllers
         public AuthController(IAuthService authService)
         {
             _authService = authService;
+            
         }
 
         [HttpPost("login")]
