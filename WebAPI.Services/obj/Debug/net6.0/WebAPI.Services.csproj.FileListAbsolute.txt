@@ -1,0 +1,17 @@
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Services.deps.json
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Services.dll
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Services.pdb
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Core.dll
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Infrastructure.dll
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Core.pdb
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/bin/Debug/net6.0/WebAPI.Infrastructure.pdb
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.csproj.AssemblyReference.cache
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.AssemblyInfoInputs.cache
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.AssemblyInfo.cs
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.csproj.CoreCompileInputs.cache
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.csproj.CopyComplete
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.dll
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/refint/WebAPI.Services.dll
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/WebAPI.Services.pdb
+/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/Debug/net6.0/ref/WebAPI.Services.dll

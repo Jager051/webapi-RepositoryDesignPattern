@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "IJxk/H+YHGMyyiMJIGahnnAxoEEMqqS99YGI6NSTVzEefm/qyUEUP3MQZ52boS2waILKVtpRblm9Z5C+JgmpzQ==",
+  "success": true,
+  "projectFilePath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "/Users/olgu/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore/6.0.25/microsoft.entityframeworkcore.6.0.25.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.25/microsoft.entityframeworkcore.abstractions.6.0.25.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore.analyzers/6.0.25/microsoft.entityframeworkcore.analyzers.6.0.25.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore.inmemory/6.0.25/microsoft.entityframeworkcore.inmemory.6.0.25.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.caching.abstractions/6.0.0/microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.caching.memory/6.0.1/microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.configuration.abstractions/6.0.0/microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.1/microsoft.extensions.dependencyinjection.6.0.1.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/pipelines.sockets.unofficial/2.2.8/pipelines.sockets.unofficial.2.2.8.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/stackexchange.redis/2.9.32/stackexchange.redis.2.9.32.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.collections.immutable/6.0.0/system.collections.immutable.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{989523E8-2A75-4AFF-B5F5-98A85B55A58E}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.WebAPI.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebAPI.API/Controllers/AuthController.cs">
+    <Files>
+      <File FileName="WebAPI.API/Controllers/AuthController.cs" Line="16" Column="13" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebAPI" expanded="True" selected="True">
+            <Node name="WebAPI.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="WebAPI.Core" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
