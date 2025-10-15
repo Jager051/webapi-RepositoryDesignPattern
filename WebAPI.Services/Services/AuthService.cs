@@ -14,12 +14,14 @@ namespace WebAPI.Services.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly IConfiguration _configuration;
         private readonly ICacheService _cacheService;
+        private readonly AuditLogService? _auditLogService;
 
-        public AuthService(IUnitOfWork unitOfWork, IConfiguration configuration, ICacheService cacheService)
+        public AuthService(IUnitOfWork unitOfWork, IConfiguration configuration, ICacheService cacheService, AuditLogService? auditLogService = null)
         {
             _unitOfWork = unitOfWork;
             _configuration = configuration;
             _cacheService = cacheService;
+            _auditLogService = auditLogService;
         }
 
         public async Task<AuthResponseDto> LoginAsync(LoginRequestDto loginRequest)
@@ -56,6 +58,12 @@ namespace WebAPI.Services.Services
 
                 if (user == null || !BCrypt.Net.BCrypt.Verify(loginRequest.Password, user.PasswordHash))
                 {
+                    // Log failed login attempt
+                    if (user != null && _auditLogService != null)
+                    {
+                        await _auditLogService.LogLoginAsync(user.Id, false);
+                    }
+                    
                     return new AuthResponseDto
                     {
                         Success = false,
@@ -69,6 +77,12 @@ namespace WebAPI.Services.Services
                 // Cache token for 24 hours
                 var tokenCacheKey = $"token:{user.Id}";
                 await _cacheService.SetAsync(tokenCacheKey, token, TimeSpan.FromHours(24));
+
+                // Log successful login
+                if (_auditLogService != null)
+                {
+                    await _auditLogService.LogLoginAsync(user.Id, true);
+                }
 
                 return new AuthResponseDto
                 {
@@ -147,6 +161,12 @@ namespace WebAPI.Services.Services
                 // Cache token
                 var tokenCacheKey = $"token:{user.Id}";
                 await _cacheService.SetAsync(tokenCacheKey, token, TimeSpan.FromHours(24));
+
+                // Log registration
+                if (_auditLogService != null)
+                {
+                    await _auditLogService.LogRegistrationAsync(user.Id, user.Username, user.Email);
+                }
 
                 return new AuthResponseDto
                 {

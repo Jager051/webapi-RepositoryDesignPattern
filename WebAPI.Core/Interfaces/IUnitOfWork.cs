@@ -9,6 +9,8 @@ namespace WebAPI.Core.Interfaces
         IProductRepository Products { get; }
         ICategoryRepository Categories { get; }
         IUserRepository Users { get; }
+        IExceptionLogRepository ExceptionLogs { get; }
+        IAuditLogRepository AuditLogs { get; }
         
         Task<int> SaveChangesAsync();
         Task BeginTransactionAsync();

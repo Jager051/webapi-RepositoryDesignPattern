@@ -65,9 +65,12 @@ builder.Services.AddScoped<ICacheService, RedisCacheService>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 // Services
+builder.Services.AddHttpContextAccessor(); // For accessing HttpContext in services
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ProductService>();
 builder.Services.AddScoped<CategoryService>();
+builder.Services.AddScoped<AuditLogService>();
+builder.Services.AddScoped<ExceptionLogService>();
 
 // JWT Authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");

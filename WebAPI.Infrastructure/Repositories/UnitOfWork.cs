@@ -14,6 +14,8 @@ namespace WebAPI.Infrastructure.Repositories
         private IProductRepository? _productRepository;
         private ICategoryRepository? _categoryRepository;
         private IUserRepository? _userRepository;
+        private IExceptionLogRepository? _exceptionLogRepository;
+        private IAuditLogRepository? _auditLogRepository;
 
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -45,6 +47,24 @@ namespace WebAPI.Infrastructure.Repositories
             {
                 _userRepository ??= new UserRepository(_context);
                 return _userRepository;
+            }
+        }
+
+        public IExceptionLogRepository ExceptionLogs
+        {
+            get
+            {
+                _exceptionLogRepository ??= new ExceptionLogRepository(_context);
+                return _exceptionLogRepository;
+            }
+        }
+
+        public IAuditLogRepository AuditLogs
+        {
+            get
+            {
+                _auditLogRepository ??= new AuditLogRepository(_context);
+                return _auditLogRepository;
             }
         }
 
