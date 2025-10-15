@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ukbQh2lgW994hvuzt0U0ZH7vB9dNh0d/zzfzIaeDXKebhraRn8QILuk/aBOkgE5WvyEJG7Uq6U6C15FON6QODw==",
+  "dgSpecHash": "+S0krC2P7XJVUR1byPphXQ3k9fMJui625c1ww8BIGyGlH27D2UufcYvw5huQU/SATUY3d6eBqYLNV4Z+eWbK1Q==",
   "success": true,
-  "projectFilePath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj",
+  "projectFilePath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

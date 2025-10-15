@@ -1,39 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/WebAPI.API.csproj": {}
+    "C:\\Users\\user\\Desktop\\core\\WebAPI.API\\WebAPI.API.csproj": {}
   },
   "projects": {
-    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/WebAPI.API.csproj": {
+    "C:\\Users\\user\\Desktop\\core\\WebAPI.API\\WebAPI.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/WebAPI.API.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\core\\WebAPI.API\\WebAPI.API.csproj",
         "projectName": "WebAPI.API",
-        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/WebAPI.API.csproj",
-        "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/obj/",
+        "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.API\\WebAPI.API.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/olgu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj"
               },
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj"
               },
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\WebAPI.Services.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\WebAPI.Services.csproj"
               }
             }
           }
@@ -67,7 +69,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -79,26 +82,28 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
+    "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj",
         "projectName": "WebAPI.Core",
-        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj",
-        "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/obj/",
+        "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/olgu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -122,7 +127,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -131,34 +137,36 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
+    "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj",
         "projectName": "WebAPI.Infrastructure",
-        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
-        "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/",
+        "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/olgu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj"
               }
             }
           }
@@ -200,7 +208,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -209,37 +218,39 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj": {
+    "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\WebAPI.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
+        "projectUniqueName": "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\WebAPI.Services.csproj",
         "projectName": "WebAPI.Services",
-        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
-        "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/obj/",
+        "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\WebAPI.Services.csproj",
+        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Services\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/olgu/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Core\\WebAPI.Core.csproj"
               },
-              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
-                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj"
+              "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\user\\Desktop\\core\\WebAPI.Infrastructure\\WebAPI.Infrastructure.csproj"
               }
             }
           }
@@ -277,7 +288,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -286,7 +298,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

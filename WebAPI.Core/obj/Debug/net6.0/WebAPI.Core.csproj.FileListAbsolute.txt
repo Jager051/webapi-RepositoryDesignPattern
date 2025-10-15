@@ -22,3 +22,15 @@
 /Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/obj/Debug/net6.0/refint/WebAPI.Core.dll
 /Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/obj/Debug/net6.0/WebAPI.Core.pdb
 /Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/obj/Debug/net6.0/ref/WebAPI.Core.dll
+C:\Users\user\Desktop\core\WebAPI.Core\bin\Debug\net6.0\WebAPI.Core.deps.json
+C:\Users\user\Desktop\core\WebAPI.Core\bin\Debug\net6.0\WebAPI.Core.dll
+C:\Users\user\Desktop\core\WebAPI.Core\bin\Debug\net6.0\WebAPI.Core.pdb
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.AssemblyInfoInputs.cache
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.AssemblyInfo.cs
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.dll
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\refint\WebAPI.Core.dll
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\WebAPI.Core.pdb
+C:\Users\user\Desktop\core\WebAPI.Core\obj\Debug\net6.0\ref\WebAPI.Core.dll
