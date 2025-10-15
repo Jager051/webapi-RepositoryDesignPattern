@@ -44,9 +44,16 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
-// Database
+// Database - SQL Server
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseInMemoryDatabase("WebAPIDb"));
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        sqlOptions => sqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(30),
+            errorNumbersToAdd: null
+        )
+    ));
 
 // Redis
 var redisConnectionString = builder.Configuration.GetConnectionString("Redis") ?? "localhost:6379";

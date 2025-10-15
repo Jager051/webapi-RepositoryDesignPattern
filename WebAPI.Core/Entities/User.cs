@@ -23,6 +23,10 @@ namespace WebAPI.Core.Entities
         public string? LastName { get; set; }
 
         public bool IsActive { get; set; } = true;
+
+        // Navigation properties
+        public virtual ICollection<ExceptionLog> ExceptionLogs { get; set; } = new List<ExceptionLog>();
+        public virtual ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
     }
 }
 

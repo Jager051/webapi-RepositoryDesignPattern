@@ -12,6 +12,8 @@ namespace WebAPI.Infrastructure.Data
         public DbSet<User> Users { get; set; } = null!;
         public DbSet<Category> Categories { get; set; } = null!;
         public DbSet<Product> Products { get; set; } = null!;
+        public DbSet<ExceptionLog> ExceptionLogs { get; set; } = null!;
+        public DbSet<AuditLog> AuditLogs { get; set; } = null!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -53,6 +55,59 @@ namespace WebAPI.Infrastructure.Data
                       .WithMany(c => c.Products)
                       .HasForeignKey(e => e.CategoryId)
                       .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // ExceptionLog configuration
+            modelBuilder.Entity<ExceptionLog>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Message).IsRequired().HasMaxLength(2000);
+                entity.Property(e => e.ExceptionType).HasMaxLength(200);
+                entity.Property(e => e.Source).HasMaxLength(500);
+                entity.Property(e => e.InnerException).HasMaxLength(2000);
+                entity.Property(e => e.RequestPath).HasMaxLength(500);
+                entity.Property(e => e.HttpMethod).HasMaxLength(10);
+                entity.Property(e => e.IpAddress).HasMaxLength(50);
+                entity.Property(e => e.UserAgent).HasMaxLength(500);
+                entity.Property(e => e.Severity).HasMaxLength(20).HasDefaultValue("Error");
+
+                // Foreign key relationship
+                entity.HasOne(e => e.User)
+                      .WithMany(u => u.ExceptionLogs)
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                // Indexes for better query performance
+                entity.HasIndex(e => e.UserId);
+                entity.HasIndex(e => e.CreatedAt);
+                entity.HasIndex(e => e.Severity);
+            });
+
+            // AuditLog configuration
+            modelBuilder.Entity<AuditLog>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+                entity.Property(e => e.Action).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.EntityName).HasMaxLength(100);
+                entity.Property(e => e.Description).HasMaxLength(1000);
+                entity.Property(e => e.IpAddress).HasMaxLength(50);
+                entity.Property(e => e.UserAgent).HasMaxLength(500);
+                entity.Property(e => e.RequestPath).HasMaxLength(500);
+                entity.Property(e => e.HttpMethod).HasMaxLength(10);
+                entity.Property(e => e.LogLevel).HasMaxLength(20).HasDefaultValue("Information");
+
+                // Foreign key relationship
+                entity.HasOne(e => e.User)
+                      .WithMany(u => u.AuditLogs)
+                      .HasForeignKey(e => e.UserId)
+                      .OnDelete(DeleteBehavior.SetNull);
+
+                // Indexes for better query performance
+                entity.HasIndex(e => e.UserId);
+                entity.HasIndex(e => e.CreatedAt);
+                entity.HasIndex(e => e.Action);
+                entity.HasIndex(e => e.EntityName);
+                entity.HasIndex(e => new { e.EntityName, e.EntityId });
             });
 
             // Seed data
