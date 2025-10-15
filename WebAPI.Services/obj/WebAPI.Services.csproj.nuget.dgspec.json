@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/WebAPI.Services.csproj": {}
+    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj": {}
   },
   "projects": {
-    "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj": {
+    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj",
+        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj",
         "projectName": "WebAPI.Core",
-        "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj",
+        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj",
         "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/obj/",
+        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olgu/.nuget/NuGet/NuGet.Config"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
+    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
+        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
         "projectName": "WebAPI.Infrastructure",
-        "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
+        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj",
         "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/obj/",
+        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olgu/.nuget/NuGet/NuGet.Config"
@@ -78,8 +78,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj": {
-                "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj"
+              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
+                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj"
               }
             }
           }
@@ -130,14 +130,14 @@
         }
       }
     },
-    "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/WebAPI.Services.csproj": {
+    "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/WebAPI.Services.csproj",
+        "projectUniqueName": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
         "projectName": "WebAPI.Services",
-        "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/WebAPI.Services.csproj",
+        "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
         "packagesPath": "/Users/olgu/.nuget/packages/",
-        "outputPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/obj/",
+        "outputPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/olgu/.nuget/NuGet/NuGet.Config"
@@ -152,11 +152,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj": {
-                "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Core/WebAPI.Core.csproj"
+              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj": {
+                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Core/WebAPI.Core.csproj"
               },
-              "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
-                "projectPath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj"
+              "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj": {
+                "projectPath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/WebAPI.Infrastructure.csproj"
               }
             }
           }

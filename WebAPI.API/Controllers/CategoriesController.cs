@@ -75,6 +75,34 @@ namespace WebAPI.API.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("active")]
+        public async Task<ActionResult<IEnumerable<CategoryDto>>> GetActiveCategories()
+        {
+            var categories = await _categoryService.GetActiveCategoriesAsync();
+            return Ok(categories);
+        }
+
+        [HttpGet("with-products")]
+        public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategoriesWithProducts()
+        {
+            var categories = await _categoryService.GetCategoriesWithProductsAsync();
+            return Ok(categories);
+        }
+
+        [HttpGet("{id}/product-count")]
+        public async Task<ActionResult<int>> GetProductCount(int id)
+        {
+            var count = await _categoryService.GetProductCountAsync(id);
+            return Ok(count);
+        }
+
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<CategoryDto>>> SearchCategories([FromQuery] string searchTerm)
+        {
+            var categories = await _categoryService.SearchCategoriesAsync(searchTerm);
+            return Ok(categories);
+        }
     }
 }
 

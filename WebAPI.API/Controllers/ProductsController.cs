@@ -82,6 +82,47 @@ namespace WebAPI.API.Controllers
 
             return NoContent();
         }
+
+        [HttpGet("active")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetActiveProducts()
+        {
+            var products = await _productService.GetActiveProductsAsync();
+            return Ok(products);
+        }
+
+        [HttpGet("price-range")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetProductsByPriceRange(
+            [FromQuery] decimal minPrice, 
+            [FromQuery] decimal maxPrice)
+        {
+            var products = await _productService.GetProductsByPriceRangeAsync(minPrice, maxPrice);
+            return Ok(products);
+        }
+
+        [HttpGet("low-stock")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> GetLowStockProducts([FromQuery] int threshold = 10)
+        {
+            var products = await _productService.GetLowStockProductsAsync(threshold);
+            return Ok(products);
+        }
+
+        [HttpGet("search")]
+        public async Task<ActionResult<IEnumerable<ProductDto>>> SearchProducts([FromQuery] string searchTerm)
+        {
+            var products = await _productService.SearchProductsAsync(searchTerm);
+            return Ok(products);
+        }
+
+        [HttpGet("sku/{sku}")]
+        public async Task<ActionResult<ProductDto>> GetProductBySku(string sku)
+        {
+            var product = await _productService.GetProductBySkuAsync(sku);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            return Ok(product);
+        }
     }
 }
 

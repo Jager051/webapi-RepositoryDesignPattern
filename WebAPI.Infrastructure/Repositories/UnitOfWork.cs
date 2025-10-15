@@ -10,11 +10,45 @@ namespace WebAPI.Infrastructure.Repositories
         private IDbContextTransaction? _transaction;
         private readonly Dictionary<Type, object> _repositories = new();
 
+        // Lazy initialization for specific repositories
+        private IProductRepository? _productRepository;
+        private ICategoryRepository? _categoryRepository;
+        private IUserRepository? _userRepository;
+
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
         }
 
+        // Specific repository properties with lazy initialization
+        public IProductRepository Products
+        {
+            get
+            {
+                _productRepository ??= new ProductRepository(_context);
+                return _productRepository;
+            }
+        }
+
+        public ICategoryRepository Categories
+        {
+            get
+            {
+                _categoryRepository ??= new CategoryRepository(_context);
+                return _categoryRepository;
+            }
+        }
+
+        public IUserRepository Users
+        {
+            get
+            {
+                _userRepository ??= new UserRepository(_context);
+                return _userRepository;
+            }
+        }
+
+        // Generic repository for other entities
         public IRepository<T> Repository<T>() where T : class
         {
             var type = typeof(T);

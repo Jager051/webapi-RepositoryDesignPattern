@@ -13,3 +13,18 @@
 /Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/obj/Debug/net6.0/refint/WebAPI.Infrastructure.dll
 /Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.pdb
 /Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Infrastructure/obj/Debug/net6.0/ref/WebAPI.Infrastructure.dll
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/bin/Debug/net6.0/WebAPI.Infrastructure.deps.json
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/bin/Debug/net6.0/WebAPI.Infrastructure.dll
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/bin/Debug/net6.0/WebAPI.Infrastructure.pdb
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/bin/Debug/net6.0/WebAPI.Core.dll
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/bin/Debug/net6.0/WebAPI.Core.pdb
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.csproj.AssemblyReference.cache
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.AssemblyInfoInputs.cache
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.AssemblyInfo.cs
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.csproj.CopyComplete
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.dll
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/refint/WebAPI.Infrastructure.dll
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/WebAPI.Infrastructure.pdb
+/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Infrastructure/obj/Debug/net6.0/ref/WebAPI.Infrastructure.dll

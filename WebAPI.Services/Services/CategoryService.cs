@@ -1,9 +1,14 @@
 using WebAPI.Core.DTOs;
-using WebAPI.Core.Entities;
 using WebAPI.Core.Interfaces;
+using WebAPI.Services.Orchestrators.Command;
+using WebAPI.Services.Orchestrators.Query;
 
 namespace WebAPI.Services.Services
 {
+    /// <summary>
+    /// Category service - coordinates orchestrators
+    /// NO direct UnitOfWork access - all data access through orchestrators
+    /// </summary>
     public class CategoryService
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -13,88 +18,114 @@ namespace WebAPI.Services.Services
             _unitOfWork = unitOfWork;
         }
 
+        #region Query Operations (Read)
+
         public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()
         {
-            var categories = await _unitOfWork.Repository<Category>().GetAllAsync();
-            return categories.Select(MapToCategoryDto);
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.GetAllAsync();
         }
 
         public async Task<CategoryDto?> GetCategoryByIdAsync(int id)
         {
-            var category = await _unitOfWork.Repository<Category>().GetByIdAsync(id);
-            return category != null ? MapToCategoryDto(category) : null;
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.GetByIdAsync(id);
         }
+
+        public async Task<IEnumerable<CategoryDto>> GetActiveCategoriesAsync()
+        {
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.GetActiveCategoriesAsync();
+        }
+
+        public async Task<IEnumerable<CategoryDto>> GetCategoriesWithProductsAsync()
+        {
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.GetAllAsync();
+        }
+
+        public async Task<int> GetProductCountAsync(int categoryId)
+        {
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.GetProductCountAsync(categoryId);
+        }
+
+        public async Task<IEnumerable<CategoryDto>> SearchCategoriesAsync(string searchTerm)
+        {
+            // Orchestrator handles all data access
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            return await orchestrator.SearchAsync(searchTerm);
+        }
+
+        #endregion
+
+        #region Command Operations (Write)
 
         public async Task<CategoryDto> CreateCategoryAsync(CreateCategoryDto createCategoryDto)
         {
-            var category = new Category
+            // Orchestrator handles business rules, validation, and data access
+            var orchestrator = new CreateCategoryOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(createCategoryDto);
+
+            if (!result.Success)
             {
-                Name = createCategoryDto.Name,
-                Description = createCategoryDto.Description,
-                IsActive = true,
-                CreatedAt = DateTime.UtcNow
-            };
+                var errorMessage = result.ValidationErrors.Any() 
+                    ? string.Join(", ", result.ValidationErrors)
+                    : result.ErrorMessage;
+                throw new InvalidOperationException(errorMessage);
+            }
 
-            await _unitOfWork.Repository<Category>().AddAsync(category);
-            await _unitOfWork.SaveChangesAsync();
-
-            return MapToCategoryDto(category);
+            return result.Data!;
         }
 
         public async Task<CategoryDto?> UpdateCategoryAsync(int id, UpdateCategoryDto updateCategoryDto)
         {
-            var category = await _unitOfWork.Repository<Category>().GetByIdAsync(id);
-            if (category == null) return null;
+            // Orchestrator handles business rules, validation, and data access
+            var orchestrator = new UpdateCategoryOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync((id, updateCategoryDto));
 
-            category.Name = updateCategoryDto.Name;
-            category.Description = updateCategoryDto.Description;
-            category.UpdatedAt = DateTime.UtcNow;
+            if (!result.Success)
+            {
+                if (result.ErrorMessage.Contains("not found"))
+                    return null;
 
-            await _unitOfWork.Repository<Category>().UpdateAsync(category);
-            await _unitOfWork.SaveChangesAsync();
+                var errorMessage = result.ValidationErrors.Any() 
+                    ? string.Join(", ", result.ValidationErrors)
+                    : result.ErrorMessage;
+                throw new InvalidOperationException(errorMessage);
+            }
 
-            return MapToCategoryDto(category);
+            return result.Data;
         }
 
         public async Task<bool> DeleteCategoryAsync(int id)
         {
-            var category = await _unitOfWork.Repository<Category>().GetByIdAsync(id);
-            if (category == null) return false;
+            // Orchestrator handles business rules, validation, and data access
+            var orchestrator = new DeleteCategoryOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(id);
 
-            // Check if category has products
-            var hasProducts = await _unitOfWork.Repository<Product>().ExistsAsync(p => p.CategoryId == id);
-            if (hasProducts)
+            if (!result.Success)
             {
-                return false; // Cannot delete category with products
+                // Validation errors veya not found
+                return false;
             }
 
-            category.IsDeleted = true;
-            category.UpdatedAt = DateTime.UtcNow;
-
-            await _unitOfWork.Repository<Category>().UpdateAsync(category);
-            await _unitOfWork.SaveChangesAsync();
-
-            return true;
+            return result.Data;
         }
 
         public async Task<bool> CategoryExistsAsync(int id)
         {
-            return await _unitOfWork.Repository<Category>().ExistsAsync(c => c.Id == id);
+            // Simple check through query orchestrator
+            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
+            var category = await orchestrator.GetByIdAsync(id);
+            return category != null;
         }
 
-        private static CategoryDto MapToCategoryDto(Category category)
-        {
-            return new CategoryDto
-            {
-                Id = category.Id,
-                Name = category.Name,
-                Description = category.Description,
-                IsActive = category.IsActive,
-                ProductCount = category.Products?.Count ?? 0,
-                CreatedAt = category.CreatedAt,
-                UpdatedAt = category.UpdatedAt
-            };
-        }
+        #endregion
     }
 }
-

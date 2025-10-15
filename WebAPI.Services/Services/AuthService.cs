@@ -40,12 +40,13 @@ namespace WebAPI.Services.Services
                 }
                 else
                 {
-                    // Try to find user by email or username
-                    user = await _unitOfWork.Repository<User>().FirstOrDefaultAsync(u => 
-                        (isEmail ? u.Email == loginRequest.Email : u.Username == loginRequest.Email) && u.IsActive);
+                    // Try to find user by email or username using custom repository methods
+                    user = isEmail 
+                        ? await _unitOfWork.Users.GetByEmailAsync(loginRequest.Email)
+                        : await _unitOfWork.Users.GetByUsernameAsync(loginRequest.Email);
                     
                     // Cache user for 15 minutes with multiple keys
-                    if (user != null)
+                    if (user != null && user.IsActive)
                     {
                         await _cacheService.SetAsync($"user:{user.Email}", user, TimeSpan.FromMinutes(15));
                         await _cacheService.SetAsync($"user_by_username:{user.Username}", user, TimeSpan.FromMinutes(15));
@@ -107,11 +108,11 @@ namespace WebAPI.Services.Services
                     };
                 }
 
-                // Check database for existing user
-                var existingUser = await _unitOfWork.Repository<User>().FirstOrDefaultAsync(u => 
-                    u.Email == registerRequest.Email || u.Username == registerRequest.Username);
+                // Check database for existing user using custom repository methods
+                var isEmailUnique = await _unitOfWork.Users.IsEmailUniqueAsync(registerRequest.Email);
+                var isUsernameUnique = await _unitOfWork.Users.IsUsernameUniqueAsync(registerRequest.Username);
 
-                if (existingUser != null)
+                if (!isEmailUnique || !isUsernameUnique)
                 {
                     return new AuthResponseDto
                     {
@@ -132,7 +133,7 @@ namespace WebAPI.Services.Services
                     CreatedAt = DateTime.UtcNow
                 };
 
-                await _unitOfWork.Repository<User>().AddAsync(user);
+                await _unitOfWork.Users.AddAsync(user);
                 await _unitOfWork.SaveChangesAsync();
 
                 // Cache the new user with multiple keys for fast lookup
@@ -216,7 +217,7 @@ namespace WebAPI.Services.Services
                 if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
                     return null;
 
-                var user = await _unitOfWork.Repository<User>().GetByIdAsync(userId);
+                var user = await _unitOfWork.Users.GetByIdAsync(userId);
                 return user != null ? MapToUserDto(user) : null;
             }
             catch

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "a5PPJMCsZgs5+n40ZeXyI4xXc3HQvg3Rj6r0DuOqEaf0RY4Z3dwHuvBbOq0LpE7UTVj0ezZh9fdTpk6QChM3iw==",
+  "dgSpecHash": "a2f+TWXje645GF/YJBdwShBfTZQo0HMczMcaVPwZ9txF12AezkfvEmas7WHnsvt201Ib0ywZz8QgTwWS612oYg==",
   "success": true,
-  "projectFilePath": "/Users/olgu/Desktop/Olgu Web Api - Cursor/WebAPI.Services/WebAPI.Services.csproj",
+  "projectFilePath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
   "expectedPackageFiles": [
     "/Users/olgu/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
