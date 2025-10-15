@@ -69,7 +69,7 @@ namespace WebAPI.Infrastructure.Data
                 entity.Property(e => e.HttpMethod).HasMaxLength(10);
                 entity.Property(e => e.IpAddress).HasMaxLength(50);
                 entity.Property(e => e.UserAgent).HasMaxLength(500);
-                entity.Property(e => e.Severity).HasMaxLength(20).HasDefaultValue("Error");
+                entity.Property(e => e.Severity).HasMaxLength(20).IsRequired();
 
                 // Foreign key relationship
                 entity.HasOne(e => e.User)
@@ -94,7 +94,7 @@ namespace WebAPI.Infrastructure.Data
                 entity.Property(e => e.UserAgent).HasMaxLength(500);
                 entity.Property(e => e.RequestPath).HasMaxLength(500);
                 entity.Property(e => e.HttpMethod).HasMaxLength(10);
-                entity.Property(e => e.LogLevel).HasMaxLength(20).HasDefaultValue("Information");
+                entity.Property(e => e.LogLevel).HasMaxLength(20).IsRequired();
 
                 // Foreign key relationship
                 entity.HasOne(e => e.User)

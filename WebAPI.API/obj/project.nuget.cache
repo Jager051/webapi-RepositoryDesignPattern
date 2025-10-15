@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "0E0jqC2tKaXl2AUdbBaMnPxyr7TZ1GYx+181t/U5Jt1SSw9HKsxAw1nhP5Sz4g3KkSTyfVcHVhaZz0kfB0kVng==",
+  "dgSpecHash": "gYJVtBQqSYJwGiAQ5Ew4j0AhWXZRi7yts20t31UY+7Lwb8Ty6mEKovKYa2ynhZl3P+yaYmYecEe7Psr1d10Rcw==",
   "success": true,
   "projectFilePath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.API/WebAPI.API.csproj",
   "expectedPackageFiles": [
     "/Users/olgu/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/6.0.25/microsoft.aspnetcore.authentication.jwtbearer.6.0.25.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.bcl.timeprovider/8.0.1/microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore/6.0.25/microsoft.entityframeworkcore.6.0.25.nupkg.sha512",
@@ -39,7 +41,8 @@
     "/Users/olgu/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "/Users/olgu/.nuget/packages/system.identitymodel.tokens.jwt/8.14.0/system.identitymodel.tokens.jwt.8.14.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
-    "/Users/olgu/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/Users/olgu/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }

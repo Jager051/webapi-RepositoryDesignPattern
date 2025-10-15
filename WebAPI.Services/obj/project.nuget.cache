@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "a2f+TWXje645GF/YJBdwShBfTZQo0HMczMcaVPwZ9txF12AezkfvEmas7WHnsvt201Ib0ywZz8QgTwWS612oYg==",
+  "dgSpecHash": "kNSUo6L/uODHGJQmRcCwC1Ks8tVBkC5Sk6RPaNwWy5hd22lZb3uI8x///BFy3yhme6BphgKAc69/CHB8KEpQRQ==",
   "success": true,
   "projectFilePath": "/Users/olgu/webapi-RepositoryDesignPattern/WebAPI.Services/WebAPI.Services.csproj",
   "expectedPackageFiles": [
     "/Users/olgu/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.aspnetcore.http.abstractions/2.2.0/microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/microsoft.aspnetcore.http.features/2.2.0/microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.bcl.asyncinterfaces/8.0.0/microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.bcl.timeprovider/8.0.1/microsoft.bcl.timeprovider.8.0.1.nupkg.sha512",
     "/Users/olgu/.nuget/packages/microsoft.entityframeworkcore/6.0.25/microsoft.entityframeworkcore.6.0.25.nupkg.sha512",
@@ -30,7 +32,8 @@
     "/Users/olgu/.nuget/packages/system.diagnostics.diagnosticsource/6.0.1/system.diagnostics.diagnosticsource.6.0.1.nupkg.sha512",
     "/Users/olgu/.nuget/packages/system.identitymodel.tokens.jwt/8.14.0/system.identitymodel.tokens.jwt.8.14.0.nupkg.sha512",
     "/Users/olgu/.nuget/packages/system.io.pipelines/5.0.1/system.io.pipelines.5.0.1.nupkg.sha512",
-    "/Users/olgu/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+    "/Users/olgu/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "/Users/olgu/.nuget/packages/system.text.encodings.web/4.5.0/system.text.encodings.web.4.5.0.nupkg.sha512"
   ],
   "logs": []
 }
