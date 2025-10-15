@@ -23,43 +23,55 @@ namespace WebAPI.Services.Services
         public async Task<IEnumerable<CategoryDto>> GetAllCategoriesAsync()
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.GetAllAsync();
+            var orchestrator = new GetAllCategoriesOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(null);
+            
+            return result.Success && result.Data != null ? result.Data : new List<CategoryDto>();
         }
 
         public async Task<CategoryDto?> GetCategoryByIdAsync(int id)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.GetByIdAsync(id);
+            var orchestrator = new GetCategoryByIdOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(id);
+            
+            return result.Success ? result.Data : null;
         }
 
         public async Task<IEnumerable<CategoryDto>> GetActiveCategoriesAsync()
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.GetActiveCategoriesAsync();
+            var orchestrator = new GetActiveCategoriesOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(null);
+            
+            return result.Success && result.Data != null ? result.Data : new List<CategoryDto>();
         }
 
         public async Task<IEnumerable<CategoryDto>> GetCategoriesWithProductsAsync()
         {
-            // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.GetAllAsync();
+            // Orchestrator handles all data access (GetAllCategories returns categories with products)
+            var orchestrator = new GetAllCategoriesOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(null);
+            
+            return result.Success && result.Data != null ? result.Data : new List<CategoryDto>();
         }
 
         public async Task<int> GetProductCountAsync(int categoryId)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.GetProductCountAsync(categoryId);
+            var orchestrator = new GetCategoryProductCountOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(categoryId);
+            
+            return result.Success ? result.Data : 0;
         }
 
         public async Task<IEnumerable<CategoryDto>> SearchCategoriesAsync(string searchTerm)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            return await orchestrator.SearchAsync(searchTerm);
+            var orchestrator = new SearchCategoriesOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(searchTerm);
+            
+            return result.Success && result.Data != null ? result.Data : new List<CategoryDto>();
         }
 
         #endregion
@@ -121,9 +133,10 @@ namespace WebAPI.Services.Services
         public async Task<bool> CategoryExistsAsync(int id)
         {
             // Simple check through query orchestrator
-            var orchestrator = new GetCategoriesOrchestrator(_unitOfWork);
-            var category = await orchestrator.GetByIdAsync(id);
-            return category != null;
+            var orchestrator = new GetCategoryByIdOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(id);
+            
+            return result.Success && result.Data != null;
         }
 
         #endregion

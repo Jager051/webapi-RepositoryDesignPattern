@@ -34,9 +34,15 @@ namespace WebAPI.Services.Services
             }
 
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            var products = await orchestrator.GetAllAsync();
-            var productList = products.ToList();
+            var orchestrator = new GetAllProductsOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(null);
+            
+            if (!result.Success || result.Data == null)
+            {
+                return new List<ProductDto>();
+            }
+
+            var productList = result.Data.ToList();
             
             // Cache for 10 minutes
             await _cacheService.SetAsync(cacheKey, productList, TimeSpan.FromMinutes(10));
@@ -56,58 +62,75 @@ namespace WebAPI.Services.Services
             }
 
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            var product = await orchestrator.GetByIdAsync(id);
+            var orchestrator = new GetProductByIdOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(id);
             
-            if (product != null)
+            if (result.Success && result.Data != null)
             {
                 // Cache for 15 minutes
-                await _cacheService.SetAsync(cacheKey, product, TimeSpan.FromMinutes(15));
+                await _cacheService.SetAsync(cacheKey, result.Data, TimeSpan.FromMinutes(15));
+                return result.Data;
             }
             
-            return product;
+            return null;
         }
 
         public async Task<IEnumerable<ProductDto>> GetProductsByCategoryAsync(int categoryId)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.GetByCategoryAsync(categoryId);
+            var orchestrator = new GetProductsByCategoryOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(categoryId);
+            
+            return result.Success && result.Data != null ? result.Data : new List<ProductDto>();
         }
 
         public async Task<IEnumerable<ProductDto>> GetActiveProductsAsync()
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.GetActiveProductsAsync();
+            var orchestrator = new GetActiveProductsOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(null);
+            
+            return result.Success && result.Data != null ? result.Data : new List<ProductDto>();
         }
 
         public async Task<IEnumerable<ProductDto>> GetProductsByPriceRangeAsync(decimal minPrice, decimal maxPrice)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.GetByPriceRangeAsync(minPrice, maxPrice);
+            var orchestrator = new GetProductsByPriceRangeOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(new PriceRangeQuery 
+            { 
+                MinPrice = minPrice, 
+                MaxPrice = maxPrice 
+            });
+            
+            return result.Success && result.Data != null ? result.Data : new List<ProductDto>();
         }
 
         public async Task<IEnumerable<ProductDto>> GetLowStockProductsAsync(int threshold)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.GetLowStockProductsAsync(threshold);
+            var orchestrator = new GetLowStockProductsOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(threshold);
+            
+            return result.Success && result.Data != null ? result.Data : new List<ProductDto>();
         }
 
         public async Task<IEnumerable<ProductDto>> SearchProductsAsync(string searchTerm)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.SearchAsync(searchTerm);
+            var orchestrator = new SearchProductsOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(searchTerm);
+            
+            return result.Success && result.Data != null ? result.Data : new List<ProductDto>();
         }
 
         public async Task<ProductDto?> GetProductBySkuAsync(string sku)
         {
             // Orchestrator handles all data access
-            var orchestrator = new GetProductsOrchestrator(_unitOfWork);
-            return await orchestrator.GetBySkuAsync(sku);
+            var orchestrator = new GetProductBySkuOrchestrator(_unitOfWork);
+            var result = await orchestrator.ExecuteAsync(sku);
+            
+            return result.Success ? result.Data : null;
         }
 
         #endregion
@@ -159,16 +182,15 @@ namespace WebAPI.Services.Services
 
         public async Task<bool> DeleteProductAsync(int id)
         {
-            // For simple operations, we can create a delete orchestrator
-            // For now, using query + update pattern
-            var getOrchestrator = new GetProductsOrchestrator(_unitOfWork);
-            var product = await getOrchestrator.GetByIdAsync(id);
+            // Check if product exists
+            var getOrchestrator = new GetProductByIdOrchestrator(_unitOfWork);
+            var result = await getOrchestrator.ExecuteAsync(id);
             
-            if (product == null) 
+            if (!result.Success || result.Data == null) 
                 return false;
 
             // In a real scenario, create DeleteProductOrchestrator
-            // For now, we'll use UpdateProductOrchestrator with IsDeleted flag
+            // For now, we'll use UpdateProductOrchestrator with IsActive flag
             // This is a simplified version - ideally create a separate DeleteProductOrchestrator
             
             // Cache invalidation
